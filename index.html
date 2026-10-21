@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Johnny Chau is a TypeScript software engineer with a background in electronic engineering and microfluidics research at HKUST.">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Johnny Chau — Software Engineer">
+  <meta property="og:description" content="TypeScript software engineering, AI tooling and real-time systems. HKUST electronic engineering and MEMS research.">
+  <meta property="og:url" content="https://happychau123.github.io/">
+  <link rel="canonical" href="https://happychau123.github.io/">
+  <title>Johnny Chau — Software Engineer</title>
+  <style>
+    :root {
+      --paper:#f9f8f5;--ink:#24282b;--muted:#5d6266;--line:#dddcd6;
+      --link:#355b69;--label:#77756d;--max:1040px
+    }
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a {color:var(--link);text-underline-offset:3px}
+    a:hover {color:#1a3641}
+    a:focus-visible {outline:2px solid var(--link);outline-offset:4px}
+    .wrap {max-width:var(--max);padding:0 34px;margin:0 auto}
+    .site-header {padding:26px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .name {color:var(--ink);font-size:15px;font-weight:700;text-decoration:none;letter-spacing:-.02em;white-space:nowrap}
+    nav {display:flex;align-items:center;gap:21px;flex-wrap:wrap}
+    nav a {font-size:13px;text-decoration:none;color:var(--muted)}
+    nav a:hover {color:var(--ink)}
+    .intro {padding:100px 0 91px;max-width:890px}
+    .overline {color:var(--label);font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+    h1 {font-size:clamp(3.15rem,7vw,5.7rem);font-weight:650;line-height:1.06;letter-spacing:-.07em;margin:17px 0 22px}
+    .intro .lead {font-size:clamp(1.32rem,2.65vw,1.76rem);line-height:1.42;letter-spacing:-.025em;max-width:760px;margin:0 0 22px}
+    .intro .about {font-size:16px;color:var(--muted);max-width:680px;margin:0}
+    .intro .actions {display:flex;flex-wrap:wrap;gap:22px;margin-top:33px;font-size:14px;font-weight:600}
+    .section {border-top:1px solid var(--line);padding:56px 0 66px}
+    .section-layout {display:grid;grid-template-columns:200px 1fr;gap:52px}
+    .section-label {font-size:12px;color:var(--label);font-weight:650;letter-spacing:.06em;text-transform:uppercase;margin:6px 0 0}
+    h2 {font-size:clamp(1.65rem,3vw,2.2rem);letter-spacing:-.045em;line-height:1.2;font-weight:650;margin:0 0 20px}
+    h3 {font-size:18px;line-height:1.35;letter-spacing:-.02em;font-weight:650;margin:0 0 7px}
+    p {margin:0 0 14px}
+    .muted {color:var(--muted)}
+    .body-copy {max-width:700px;color:#464d52}
+    .feature {display:grid;grid-template-columns:1fr 180px;gap:22px;padding:22px 0;border-top:1px solid var(--line)}
+    .feature:last-child {border-bottom:1px solid var(--line)}
+    .feature p {color:var(--muted);margin:0;max-width:620px;font-size:15px}
+    .tech {font-size:12px;color:var(--label);text-align:right;padding-top:3px;line-height:1.65}
+    .work-table {width:100%;border-collapse:collapse;text-align:left}
+    .work-table th {font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--label);border-bottom:1px solid var(--ink);padding:0 10px 12px 0}
+    .work-table td {font-size:14px;vertical-align:top;padding:18px 16px 20px 0;border-bottom:1px solid var(--line);line-height:1.55}
+    .work-table th:first-child,.work-table td:first-child {width:143px;white-space:nowrap}
+    .work-table th:nth-child(2),.work-table td:nth-child(2) {width:220px}
+    .work-table .role {display:block;color:var(--muted);font-size:13px;margin-top:3px}
+    .work-table .detail {color:#51585d}
+    .degree {display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;padding:17px 0 20px;border-top:1px solid var(--line)}
+    .degree .when {color:var(--label);font-size:13px;white-space:nowrap}
+    .degree p {color:var(--muted);font-size:14px;margin:7px 0 0}
+    .pubs {margin:0;padding:0;list-style:none}
+    .pubs li {border-top:1px solid var(--line);padding:19px 0}
+    .pubs li:last-child {border-bottom:1px solid var(--line)}
+    .pub-title {font-size:15px;font-weight:600;line-height:1.5}
+    .pubs .citation {color:var(--muted);font-size:13px;line-height:1.6;margin:6px 0}
+    .pubs .source {font-size:13px}
+    .footer {border-top:1px solid var(--line);padding:34px 0 45px;display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    @media(max-width:820px) {
+      .section-layout {grid-template-columns:1fr;gap:14px}
+      .section-label {margin:0}
+      .intro {padding:72px 0 76px}
+      .section {padding:41px 0 49px}
+      .work-table th:first-child,.work-table td:first-child {width:126px}
+      .work-table th:nth-child(2),.work-table td:nth-child(2) {width:190px}
+    }
+    @media(max-width:620px) {
+      .wrap {padding:0 21px}
+      .site-header {align-items:flex-start;flex-direction:column;gap:13px}
+      nav {gap:10px 17px}
+      nav a {font-size:13px}
+      .intro {padding:62px 0 67px}
+      h1 {font-size:clamp(3.2rem,12.8vw,4.4rem)}
+      .feature {grid-template-columns:1fr;gap:7px}
+      .tech {text-align:left;padding:0}
+      .work-table,.work-table tbody,.work-table tr,.work-table td {display:block;width:100%!important}
+      .work-table thead {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+      .work-table tr {border-bottom:1px solid var(--line);padding:15px 0}
+      .work-table td {border:0;padding:0}
+      .work-table td:first-child {font-size:12px;color:var(--label);margin-bottom:5px}
+      .work-table td:nth-child(2) {font-weight:650;margin-bottom:5px}
+      .work-table td:nth-child(3) {font-size:14px}
+      .work-table .role {font-weight:400}
+    }
+    @media(prefers-reduced-motion:reduce) {html{scroll-behavior:auto}}
+    @media print {
+      :root{--paper:#fff}
+      .site-header nav,.intro .actions,.footer{display:none}
+      body{font-size:12px}
+      .intro{padding:20px 0}.section{padding:20px 0}
+      .section-layout{grid-template-columns:120px 1fr}
+      .feature,.degree,.pubs li,.work-table tr{break-inside:avoid}
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="wrap">
+    <header class="site-header">
+      <a class="name" href="#top">Johnny Chau</a>
+      <nav aria-label="Site navigation">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#publications">Papers</a>
+        <a href="mailto:happychau123@gmail.com">Email</a>
+        <a href="Johnny_Chau_CV.pdf">CV (PDF)</a>
+        <a href="https://github.com/happychau123" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="overline">Software engineering · TypeScript · Electronic engineering</div>
+        <h1 id="intro-title">Johnny Chau</h1>
+        <p class="lead">I build TypeScript backends, API integrations and real-time systems.</p>
+        <p class="about">I studied electronic engineering at HKUST and spent two years on MEMS and microfluidics research. My recent work includes backend services, exchange integrations and AI coding-agent workflows.</p>
+        <div class="actions"><a href="mailto:happychau123@gmail.com">happychau123@gmail.com ↗</a><a href="Johnny_Chau_CV.pdf" download>Download CV ↓</a><a href="#experience">Work history ↓</a><a href="https://github.com/happychau123" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-layout">
+          <div class="section-label">Selected work</div>
+          <div>
+            <h2 id="projects-title">Software projects</h2>
+            <p class="body-copy">Most of my recent work is in private repositories. These are the main systems and problems I have been working on.</p>
+            <div class="feature">
+              <div><h3>Automated trading software</h3><p>Exchange API integrations, WebSocket market and fill events, order execution, hedge processing and error recovery. Much of the work concerns timing and correctness when several events arrive together.</p></div>
+              <div class="tech">TypeScript / Node.js<br>WebSockets / REST APIs</div>
+            </div>
+            <div class="feature">
+              <div><h3>AI and browser automation</h3><p>I use Codex, Cursor, GitHub Copilot and locally run LLMs as coding and general-purpose agents, with browser and task automation to support development.</p></div>
+              <div class="tech">Codex / Cursor / Copilot<br>Local LLM agents</div>
+            </div>
+            <div class="feature">
+              <div><h3>Reusable API integrations</h3><p>Typed interfaces for external services, including request handling, streaming connections, retries and tests. I prefer small, testable components over large adapter layers.</p></div>
+              <div class="tech">TypeScript<br>API design / testing</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="section-layout">
+          <div class="section-label">Experience</div>
+          <div>
+            <h2 id="experience-title">Work history</h2>
+            <table class="work-table">
+              <thead><tr><th scope="col">Dates</th><th scope="col">Employer and role</th><th scope="col">Work</th></tr></thead>
+              <tbody>
+                <tr><td>Dec 2023 – Present</td><td>Hong Kong Kyowa Bussan Co., Ltd.<span class="role">香港共和物産株式会社 · AI Programmer, Japan</span></td><td class="detail">Develop and maintain TypeScript backend services for AI-assisted multilingual product descriptions and e-commerce market analysis.</td></tr>
+                <tr><td>Dec 2022 – Oct 2023</td><td>劉昇通商株式会社<span class="role">Software Engineer · TypeScript backend, Japan</span></td><td class="detail">Developed backend application features in TypeScript.</td></tr>
+                <tr><td>Jun 2021 – Nov 2022</td><td>東京人材派遣株式会社<span class="role">Software Engineer · TypeScript backend, Japan</span></td><td class="detail">Worked on server-side application development in TypeScript.</td></tr>
+                <tr><td>2018 – 2019</td><td>HIGHTECH, HK Science Park<span class="role">Application Engineer</span></td><td class="detail">FEM simulation for MEMS Hall sensors, firmware development in C and coordination across engineering teams.</td></tr>
+                <tr><td>2015 – 2017</td><td>HKUST<span class="role">Postgraduate Researcher · Electronic Engineering</span></td><td class="detail">BioMEMS, microfluidic cell sorting, COMSOL simulation, MEMS fabrication and clean-room work.</td></tr>
+                <tr><td>2015 – 2017</td><td>HKUST<span class="role">Teaching Assistant · Concurrent with research</span></td><td class="detail">Supported undergraduate electronics courses.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education" aria-labelledby="education-title">
+        <div class="section-layout">
+          <div class="section-label">Education</div>
+          <div>
+            <h2 id="education-title">HKUST</h2>
+            <div class="degree">
+              <div><h3>BEng in Electronic Engineering</h3><p>First Class Honours. Signal processing, control systems, robotics and quadcopter work with MATLAB and Simulink.</p></div>
+              <div class="when">2012–2015</div>
+            </div>
+            <div class="degree">
+              <div><h3>Postgraduate Research — Electronic Engineering, HKUST</h3><p>Dielectrophoretic cell separation, microfluidics and BioMEMS. COMSOL finite-element simulation, microfabrication and clean-room processes.</p></div>
+              <div class="when">2015–2017</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="publications" aria-labelledby="publications-title">
+        <div class="section-layout">
+          <div class="section-label">Research</div>
+          <div>
+            <h2 id="publications-title">Publications</h2>
+            <ol class="pubs">
+              <li><div class="pub-title">Railing cells along 3D microelectrode tracks for continuous-flow dielectrophoretic sorting</div><div class="citation">X. Xing, C. N. Ng, <strong>M. L. Chau</strong>, L. Yobas. <em>Lab on a Chip</em>, 18(24), 3760–3769 (2018).</div><a class="source" href="https://doi.org/10.1039/C8LC00805A" target="_blank" rel="noopener noreferrer">DOI: 10.1039/C8LC00805A ↗</a></li>
+              <li><div class="pub-title">Numerical simulation for cell railing on 3D silicon microelectrodes featuring sidewall undercuts</div><div class="citation"><strong>M. L. Chau</strong>, X. Xing, L. Yobas. MicroTAS 2017, pp. 822–823.</div><a class="source" href="https://microtasconferences.org/microtas2017/program/MicroTAS2017_FinalProgram.pdf" target="_blank" rel="noopener noreferrer">Conference program ↗</a></li>
+              <li><div class="pub-title">Dielectrophoretic cell sorting via sliding cells on 3D silicon microelectrodes</div><div class="citation">X. Xing, <strong>M. L. Chau</strong>, K. A. Roshan, L. Yobas. IEEE MEMS 2017, pp. 147–150.</div><a class="source" href="https://doi.org/10.1109/MEMSYS.2017.7863362" target="_blank" rel="noopener noreferrer">DOI: 10.1109/MEMSYS.2017.7863362 ↗</a></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <span>© 2026 Johnny Chau</span>
+      <span><a href="mailto:happychau123@gmail.com">Email</a> · <a href="Johnny_Chau_CV.pdf">CV</a> · <a href="https://github.com/happychau123" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    </footer>
+  </div>
+</body>
+</html>
